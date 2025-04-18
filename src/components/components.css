@@ -70,3 +70,47 @@ button:active {
 .reset {
 	padding: 8px 20px;
 }
+
+.month-view-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for 7 days of the week */
+    gap: 5px; /* Space between days */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.week {
+    display: contents; /* Allows the week to flow into the grid */
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.day .weekday {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.day .date {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.month-year {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

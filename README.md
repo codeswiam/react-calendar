@@ -4,6 +4,6 @@ This is a simple and interactive calendar application built with React. It allow
 
 ## Future improvements
 
-- Add a weekly, monthly, yearly view.
+- Added a weekly and monthly.
 - Add events.
 - Add tasks.

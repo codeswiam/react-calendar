@@ -1,6 +1,7 @@
 import React from 'react';
 import ChangePeriod from "./ChangePeriod";
 
+// gets passed startOfWeek
 const ChangeWeek = ({state, setter}) => {
     function previousWeek() {
         state.setDate(state.getDate() - 7);
