@@ -33,16 +33,12 @@ export default function CalendarUI() {
                 <ToggleButton value="month" aria-label="month view">
                     Month
                 </ToggleButton>
-                <ToggleButton value="year" aria-label="year view">
-                    Year
-                </ToggleButton>
             </ToggleButtonGroup>
 
             <div className="view-container">
                 {view === "day" && <DayView state={today} setter={setToday} />}
                 {view === "week" && <WeekView state={today} />}
                 {view === "month" && <MonthView state={today} />}
-                {view === "year" && <div>Year View Placeholder</div>}
             </div>
         </>
 

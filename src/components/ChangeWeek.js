@@ -1,5 +1,6 @@
 import React from 'react';
 import ChangePeriod from "./ChangePeriod";
+import { getStartOfWeek } from './WeekView';
 
 // gets passed startOfWeek
 const ChangeWeek = ({state, setter}) => {
@@ -15,7 +16,7 @@ const ChangeWeek = ({state, setter}) => {
 
     // when people click on the Today button
     function resetWeek() {
-        setter(new Date());
+        setter(getStartOfWeek(new Date()));
       }
 
     return (

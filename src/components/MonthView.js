@@ -15,13 +15,14 @@ const Week = ({weekDates}) => {
     )
 }
 
+// get the first day of the month
+export const getStartOfMonth = (date) => {
+    const startOfMonth = new Date(date);
+    startOfMonth.setDate(1); // Set to the first day of the month
+    return startOfMonth;
+};
+
 const MonthView = ({ state }) => {
-    // get the first day of the month
-    const getStartOfMonth = (date) => {
-        const startOfMonth = new Date(date);
-        startOfMonth.setDate(1); // Set to the first day of the month
-        return startOfMonth;
-    };
 
     // gets all the weeks in the month
     const getMonthWeeks = (startOfMonth) => {
@@ -45,8 +46,6 @@ const MonthView = ({ state }) => {
     const month = startOfMonth.toLocaleString("default", { month: "long" });
 
     const monthWeeks = getMonthWeeks(startOfMonth);
-
-    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     return (
         <>

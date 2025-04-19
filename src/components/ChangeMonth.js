@@ -1,5 +1,6 @@
 import React from 'react';
 import ChangePeriod from "./ChangePeriod";
+import { getStartOfMonth } from './MonthView';
 
 // gets passed startOfMonth
 const ChangeMonth = ({state, setter}) => {
@@ -15,8 +16,8 @@ const ChangeMonth = ({state, setter}) => {
 
     // when people click on the Today button
     function resetMonth() {
-        setter(new Date());
-      }
+        setter(getStartOfMonth(new Date()));
+    }
 
     return (
         <ChangePeriod previous={previousMonth} current={resetMonth} next={nextMonth}/>
