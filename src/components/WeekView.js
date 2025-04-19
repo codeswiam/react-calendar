@@ -29,16 +29,21 @@ const WeekView = ({ state }) => {
 
     return (
         <>
-            <div className="month-year">{month} {year}</div>
-            <div className="week-view-container">
-                {weekDates.map((date, index) => (
-                    <div key={index} className="day">
-                        <p className="weekday">{date.toLocaleString("default", { weekday: "long" })}</p>
-                        <p className="date">{date.getDate()}</p>
-                    </div>
-                ))}
+            <div className="header">
+                <div className="month-year">{month} {year}</div>
+                <ChangeWeek state={startOfWeek} setter={setStartOfWeek}/>
             </div>
-            <ChangeWeek state={startOfWeek} setter={setStartOfWeek}/>
+
+            <div className="container">
+                <div className="week-view-container">
+                    {weekDates.map((date, index) => (
+                        <div key={index} className="day">
+                            <p className="weekday">{date.toLocaleString("default", { weekday: "long" })}</p>
+                            <p className="date">{date.getDate()}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </>
     );
 };

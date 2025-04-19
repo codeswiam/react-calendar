@@ -9,15 +9,20 @@ const DayView = ({state, setter}) => {
 
     return (
         <>
-            <div className="day-view-container">
-                <div className="main">
-                    <p className="month">{month}</p>
-                    <p className="day">{day}</p>
-                    <p className="date">{date}</p>
-                    <p className="year">{year}</p>
+            <div className="header">
+                <div className="month-year">{month} {year}</div>
+                <ChangeDate state={state} setter={setter}/>
+            </div>
+            <div className="container">
+                <div className="day-view-container">
+                        <div className="month">{month}</div>
+                        <div className="others">
+                            <p className="day">{day.substring(0, 3)}</p>
+                            <p className="date">{date}</p>
+                            <p className="year">{year}</p>
+                        </div>
                 </div>
             </div>
-            <ChangeDate state={state} setter={setter}/>
         </>
 
     )

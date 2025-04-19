@@ -49,15 +49,20 @@ const MonthView = ({ state }) => {
 
     return (
         <>
-            <div className="month-year">{month} {year}</div>
-            <div className="month-view-container">
-                {monthWeeks.map((weekDates, index) => (
-                    <div key={index} className="week">
-                        <Week weekDates={weekDates}/>
-                    </div>
-                ))}
+            <div className="header">
+                <div className="month-year">{month} {year}</div>
+                <ChangeMonth state={startOfMonth} setter={setStartOfMonth}/>
             </div>
-            <ChangeMonth state={startOfMonth} setter={setStartOfMonth}/>
+            
+            <div className="container">
+                <div className="month-view-container">
+                    {monthWeeks.map((weekDates, index) => (
+                        <div key={index} className="week">
+                            <Week weekDates={weekDates}/>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </>
     );
 };
